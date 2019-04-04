@@ -13,16 +13,17 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-size: 80%;
   font-family: 'Josefin Sans', sans-serif;
 }
 
 img {
-  width: 70px;
+  width: 10rem;
   height: auto;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -31,32 +32,36 @@ p {
 }
 
 main {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  padding: 0;
 }
 
 section {
-  padding: 30px;
+  padding: 3rem;
   height: auto;
 }
 
 section#about {
-  background: url('https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+  background: url('https://media.giphy.com/media/xT9IgN8YKRhByRBzMI/giphy.gif')
     no-repeat center center/cover;
-  padding-top: 100px;
+  padding-top: 10rem;
   color: #cacfd2;
 }
 
-#myself {
-  padding: 40px;
-  width: 50%;
-  display: flex;
-  flex-direction: row;
+section#about .row {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
 }
 
-#about img {
-  border: 1px solid #eee;
-  box-shadow: 4px 4px 4px #f4f4f4;
-  border-radius: 5px;
+section#about .col .lead {
+  padding: 1rem;
+}
+
+section#about .col img {
+  width: 80%;
+  box-shadow: 0.5rem 0.5rem 0.5rem #eee;
+  border-radius: 5rem;
 }
 
 section#skills {
@@ -65,14 +70,48 @@ section#skills {
   color: #eee;
 }
 
+section#skills .row {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+
+section#skills .row .col {
+  width: 10rem;
+  height: 10rem;
+  margin-left: 3rem;
+  padding: 3rem;
+  background-color: #eee;
+  border-radius: 0.2rem;
+}
+
+section#skills .row .col#html {
+  background: url(../img/html5.jpg) no-repeat center center/cover;
+}
+
+section#skills .row .col#css {
+  background: url(../img/css3.jpeg) no-repeat center center/cover;
+}
+
+section#skills .row .col#js {
+  background: url(../img/JavaScript-logo.png) no-repeat center center/cover;
+}
+
 section#experience {
   background: url('https://images.pexels.com/photos/1954/black-and-white-lights-abstract-curves.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
     no-repeat center center/cover;
   color: #eee;
 }
 
-.exp-grid {
-  padding: 30px;
+section#experience .row {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 3rem;
+}
+
+section#experience .row .col {
+  background-color: rgba(213, 219, 219, 0.5);
+  border: 1px solid #eee;
+  padding: 2rem;
 }
 
 section#projects {
@@ -94,16 +133,8 @@ section#contact {
 }
 
 @media (max-width: 600px) {
-  h1 {
-    font-size: 14px;
-  }
-
-  p {
-    font-size: 8px;
-  }
-
   main {
-    display: inline-block;
+    display: block;
   }
 }
 
@@ -140,17 +171,6 @@ section#contact {
     color: #1f618d;
   }
 
-  #about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-grid-item img {
-    position: relative;
-    top: 25%;
-    left: 30%;
-  }
-
   #form {
     width: 50%;
     height: auto;
@@ -182,11 +202,14 @@ section#contact {
   }
 }
 
-@media (max-width: 500px) {
-  .about-grid-item img {
-    width: 40%;
-    position: relative;
-    left: 50%;
+@media (max-width: 1400px) {
+  section#about .row {
+    display: block;
+  }
+
+  section#about .row .col {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
@@ -219,14 +242,15 @@ section#contact {
   }
 
   #navlist.responsive {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     display: block;
     list-style-type: none;
     background-color: gray;
   }
 
   #navlist.responsive li {
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
   }
 
@@ -245,20 +269,23 @@ section#contact {
     color: #000;
   }
 
-  #about {
-    display: inline-block;
+  section#skills .row {
+    display: block;
   }
 
-  #skills-photos img {
-    width: 70px;
-    position: relative;
-    left: 20%;
-    margin-left: 30px;
+  section#skills .row .col {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .about-grid-item img {
-    position: relative;
-    left: 50%;
+  section#experience .row {
+    display: block;
+  }
+
+  section#experience .row .col {
+    padding: 2rem;
+    margin-bottom: 3rem;
   }
 
   #form {
@@ -290,36 +317,11 @@ section#contact {
   }
 }
 
-@media only screen and (min-width: 1300px) {
-  #about img {
-    width: 150px;
-  }
+@media (max-width: 1000px) {
+}
 
-  #skills-photos img {
-    width: 100px;
-  }
-  section#experience {
-    height: 180vh;
-  }
-  .exp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 40px;
-    font-size: 2rem;
-  }
+@media only screen and (min-width: 1300px) {
 }
 
 @media (min-width: 1600px) and (max-width: 2000px) {
-  #about img {
-    position: relative;
-    top: 5%;
-  }
-
-  #skills-photos img {
-    margin-right: 50px;
-    width: 200px;
-    position: relative;
-    left: 35%;
-  }
 }
