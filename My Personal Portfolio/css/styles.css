@@ -49,6 +49,10 @@ section#about {
   color: #cacfd2;
 }
 
+section#about h1 {
+    color: #000;
+}
+
 section#about .row {
   display: grid;
   grid-template-columns: 2fr 2fr;
@@ -70,9 +74,21 @@ section#skills {
   color: #eee;
 }
 
+section#skills .lead {
+    padding: 3rem;
+    background-color: rgba(46, 64, 83,0.8);
+}
+
+section#skills h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 3rem;
+}
+
 section#skills .row {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
+    grid-gap: 3rem;
 }
 
 section#skills .row .col {
@@ -92,8 +108,36 @@ section#skills .row .col#css {
   background: url(../img/css3.jpeg) no-repeat center center/cover;
 }
 
+section#skills .row .col#sass {
+  background: url(../img/sass.png) no-repeat center center/cover;
+}
+
 section#skills .row .col#js {
   background: url(../img/JavaScript-logo.png) no-repeat center center/cover;
+}
+
+section#skills .row .col#csharp {
+  background: url(../img/csharp.jpg) no-repeat center center/cover;
+}
+
+section#skills .row .col#asp {
+  background: url(../img/aspnet.png) no-repeat center center/cover;
+}
+
+section#skills .other-skills {
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+}
+
+section#skills .other-skills p {
+    background-color: darkgray;
+    color: black;
+    padding: 1rem;
+    box-shadow: .4rem .4rem .6rem darkgray;
+}
+
+section#skills .other-skills .skills-col {
+    padding: 3rem;
 }
 
 section#experience {
@@ -130,6 +174,10 @@ section#contact {
   background: url('https://images.pexels.com/photos/20721/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
     no-repeat center center/cover;
   color: #ddd;
+}
+
+footer {
+    padding: 3rem;
 }
 
 @media (max-width: 600px) {
@@ -172,10 +220,10 @@ section#contact {
   }
 
   #form {
-    width: 50%;
+    width: 30%;
     height: auto;
     background-color: rgba(98, 101, 103, 0.5);
-    margin: 0 auto;
+    margin-left: 5rem;
     padding: 30px;
   }
 
@@ -277,6 +325,10 @@ section#contact {
     margin-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
+  }
+    
+  section#skills .other-skills {
+    display: block;
   }
 
   section#experience .row {
