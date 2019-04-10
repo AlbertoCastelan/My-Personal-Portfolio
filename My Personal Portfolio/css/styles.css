@@ -13,7 +13,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-size: 80%;
+  font-size: 100%;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -49,25 +49,27 @@ section#about {
   color: #cacfd2;
 }
 
+#projects-title {
+  background-color: #eee;
+}
+
 section#about h1 {
-    color: #000;
-}
-
-section#about .row {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-}
-
-section#about .col .lead {
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.8);
   padding: 1rem;
+  color: #eee;
+  text-shadow: #212f3d;
 }
 
 section#about .col img {
-  width: 80%;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
   box-shadow: 0.5rem 0.5rem 0.5rem #eee;
-  border-radius: 5rem;
+  border-radius: 5px;
 }
 
+/* SKILLS SECTION */
 section#skills {
   background: url('https://images.pexels.com/photos/266526/pexels-photo-266526.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
     no-repeat center center/cover;
@@ -75,20 +77,24 @@ section#skills {
 }
 
 section#skills .lead {
-    padding: 3rem;
-    background-color: rgba(46, 64, 83,0.8);
+  padding: 3rem;
+  background-color: rgba(46, 64, 83, 0.8);
 }
 
 section#skills h2 {
-    text-align: center;
-    font-size: 2rem;
-    padding: 3rem;
+  display: block;
+  margin: 1rem auto;
+  width: 50%;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 section#skills .row {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
-    grid-gap: 3rem;
+  grid-gap: 3rem;
 }
 
 section#skills .row .col {
@@ -124,20 +130,25 @@ section#skills .row .col#asp {
   background: url(../img/aspnet.png) no-repeat center center/cover;
 }
 
-section#skills .other-skills {
-    display: grid;
-    grid-template-columns: repeat(4,2fr);
+.other-skills {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+}
+
+.other-skills img {
+  width: 100%;
 }
 
 section#skills .other-skills p {
-    background-color: darkgray;
-    color: black;
-    padding: 1rem;
-    box-shadow: .4rem .4rem .6rem darkgray;
+  background-color: darkgray;
+  color: black;
+  padding: 1rem;
+  box-shadow: 0.4rem 0.4rem 0.6rem darkgray;
+  width: 100%;
 }
 
 section#skills .other-skills .skills-col {
-    padding: 3rem;
+  padding: 3rem;
 }
 
 section#experience {
@@ -158,6 +169,7 @@ section#experience .row .col {
   padding: 2rem;
 }
 
+/* PROJECTS SECTION */
 section#projects {
   background: url('https://images.pexels.com/photos/532563/pexels-photo-532563.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
     no-repeat center center/cover;
@@ -165,19 +177,79 @@ section#projects {
   text-align: center;
 }
 
+section#projects img {
+  width: 250px;
+  height: 250px;
+  box-shadow: 1rem 1rem 2rem #eee;
+  border-radius: 3px;
+}
+
+section#projects .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
 section#projects a {
   text-decoration: none;
   color: #eee;
 }
 
+/* CONTACT SECTION */
 section#contact {
   background: url('https://images.pexels.com/photos/20721/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
     no-repeat center center/cover;
   color: #ddd;
 }
 
+.container {
+  display: block;
+}
+
+#map iframe {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  height: auto;
+}
+
+.social-media {
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.social-media-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.social-media h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.social-media a {
+  text-decoration: none;
+  display: inline;
+}
+
+.social-media i {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: #eee;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
 footer {
-    padding: 3rem;
+  padding: 3rem;
+  text-align: center;
+  font-size: 2rem;
+  background-color: #17202a;
+  color: #ddd;
 }
 
 @media (max-width: 600px) {
@@ -219,19 +291,6 @@ footer {
     color: #1f618d;
   }
 
-  #form {
-    width: 30%;
-    height: auto;
-    background-color: rgba(98, 101, 103, 0.5);
-    margin-left: 5rem;
-    padding: 30px;
-  }
-
-  #form input,
-  #form textarea {
-    width: 100%;
-  }
-
   #button {
     width: 50%;
     height: auto;
@@ -248,16 +307,17 @@ footer {
     background-color: #eee;
     color: #000;
   }
-}
 
-@media (max-width: 1400px) {
-  section#about .row {
+  #map iframe {
+    width: 500px;
+    height: 500px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  section#about .row .col {
-    margin-left: 10%;
-    margin-right: 10%;
+  .social-media i {
+    font-size: 2rem;
   }
 }
 
@@ -326,9 +386,15 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-    
+
   section#skills .other-skills {
     display: block;
+  }
+
+  .other-skills img,
+  .other-skills p {
+    display: block;
+    margin: 0 auto;
   }
 
   section#experience .row {
@@ -340,10 +406,36 @@ footer {
     margin-bottom: 3rem;
   }
 
+  section#projects .row {
+    display: block;
+  }
+
+  section#projects .row .box {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 999px) {
+  .container {
+    display: block;
+  }
+
   #form {
-    background-color: rgba(98, 101, 103, 0.5);
+    width: 100%;
+    padding: 1rem;
+    display: block;
     margin: 0 auto;
-    padding: 30px;
+
+    background-color: rgb(98, 101, 103);
+    height: auto;
+  }
+
+  form {
+    padding: 2rem;
+  }
+
+  #form p {
+    font-size: 0.8rem;
   }
 
   #form input,
@@ -369,7 +461,51 @@ footer {
   }
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 2rem;
+  }
+
+  #form {
+    width: 100%;
+    background-color: rgb(98, 101, 103);
+    height: auto;
+  }
+
+  form {
+    padding: 2rem;
+  }
+
+  #form p {
+    font-size: 1rem;
+  }
+
+  #form input,
+  #form textarea {
+    width: 100%;
+  }
+
+  #map {
+    width: 50%;
+    height: auto;
+  }
+
+  .social-media i {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1100px) {
+  .other-skills {
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(2, 2fr);
+  }
+
+  .other-skills img {
+    width: 50%;
+  }
 }
 
 @media only screen and (min-width: 1300px) {
